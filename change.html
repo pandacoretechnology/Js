@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div{
+        height: 7cm;
+        width: 7cm;
+    }
+</style>
+
+<body>
+    <select id="theme">
+
+        <option value="white">Light</option>
+
+        <option value="#1C2833">Dark</option>
+
+        <option value="red">Red</option>
+    </select>
+
+    <div id="smt"></div>
+
+
+    <script>
+        const select = document.getElementById("theme");
+        const smt = document.getElementById("smt")
+
+        select.addEventListener("change", function () {
+            smt.style.backgroundColor = select.value;
+        });
+    </script>
+
+</body>
+
+</html>

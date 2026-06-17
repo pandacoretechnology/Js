@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click Event Demo</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #message { margin-top: 20px; font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Click Event</h2>
+    <button id="myButton">Click Me!</button>
+    <p id="message"></p>
+
+    <script>
+        
+        const button = document.getElementById('myButton');
+        const messagePara = document.getElementById('message');
+
+        
+        button.addEventListener('click', function() {
+            messagePara.textContent = "🎉 You clicked the button! Awesome.";
+        });
+    </script>
+
+</body>
+</html>
