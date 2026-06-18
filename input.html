@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="name" placeholder="Type your name">
+
+    <p id="preview">Hello, !</p>
+
+    <script>
+        const nameInput = document.getElementById("name");
+        const preview = document.getElementById("preview");
+
+        nameInput.addEventListener("input", function () {
+            preview.textContent = "Hello, " + nameInput.value + "!";
+        });
+    </script>
+</body>
+
+</html>
