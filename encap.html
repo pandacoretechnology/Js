@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class BankAccount {
+            // Private fields (cannot be accessed outside the class)
+            #balance = 0;
+
+            constructor(owner) {
+                this.owner = owner;
+            }
+
+            deposit(amount) {
+                if (amount > 0) {
+                    this.#balance += amount;
+                    console.log(`Deposited $${amount}. New balance: $${this.#balance}`);
+                }
+            }
+
+            getBalance() {
+                return this.#balance;
+            }
+        }
+
+        const myAccount = new BankAccount("Alice");
+        myAccount.deposit(100);       // Works fine!
+        console.log(myAccount.owner);  // Works fine -> "Alice"
+
+        
+    </script>
+</body>
+
+</html>

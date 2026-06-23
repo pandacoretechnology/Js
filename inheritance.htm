@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Car{
+            bmw(){
+                console.log("The BMW is here")
+            }
+
+            audi(){
+                console.log("The Audi is here")
+            }
+        }
+
+        class Spe extends Car{
+            bmw_spe(){
+                console.log("The engine is Moster")
+            }
+
+            audi_spe(){
+                console.log("The Lunxy is here")
+            }
+        }
+
+        class Tri extends Spe{
+            sample(){
+                console.log("This code is Access")
+            }
+        }
+
+        
+
+
+        const myCar = new Car();
+        const myCarSpe = new Spe();
+        const testing = new Tri();
+        
+        myCar.bmw()
+        myCarSpe.audi()
+        testing.audi()
+    </script>
+</body>
+
+</html>
