@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f2f5;
+        }
+
+        /* The main trigger button */
+        .open-btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* The Background Overlay (Hidden by default) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none; /* Stops user from clicking elements behind it */
+            transition: opacity 0.3s ease;
+        }
+
+        /* The actual Popup Box */
+        .popup-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        /* The Close Button inside the popup */
+        .close-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* JavaScript will toggle this class to show the popup */
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .popup-overlay.active .popup-box {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="open-btn" id="openPopup">Click Me!</button>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+            <h2>Hello! 👋</h2>
+            <p>This is a simple, custom JavaScript popup box.</p>
+            <button class="close-btn" id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Grab our elements from the DOM
+        const openBtn = document.getElementById('openPopup');
+        const closeBtn = document.getElementById('closePopup');
+        const overlay = document.getElementById('popupOverlay');
+
+        // 2. Open popup when clicking the main button
+        openBtn.addEventListener('click', () => {
+            overlay.classList.add('active');
+        });
+
+        // 3. Close popup when clicking the "Close" button
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+        });
+
+        // 4. OPTIONAL: Close popup if user clicks the dark background outside the box
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

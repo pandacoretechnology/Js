@@ -82,12 +82,13 @@
         const text = textInput.value;
         
         
-        charCount.textContent = text.length;
+        charCount.textContent = text.length; //35
         
         const cleanText = text.trim();
         if (cleanText === '') {
             wordCount.textContent = 0;
         } else {
+            console.log(cleanText.split(/\s+/))
             // Regex matches one or more space characters
             const words = cleanText.split(/\s+/);
             wordCount.textContent = words.length;
