@@ -1,0 +1,8 @@
+<script>
+    const text = "Hello World";
+    const blob = new Blob([text], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = "sample.txt";
+    link.click();
+</script>

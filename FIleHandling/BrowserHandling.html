@@ -1,0 +1,12 @@
+
+<input type="file" id="file">
+
+<script>
+    const input = document.getElementById("file");
+    input.addEventListener("change", function () {
+        const file = this.files[0];
+        console.log(file.name);
+        console.log(file.size);
+        console.log(file.type);
+    });
+</script>
